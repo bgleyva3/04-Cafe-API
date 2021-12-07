@@ -13,6 +13,9 @@ const usuariosGet = async (req = request, res = response) => {
 
     const {limite = 5, desde = 0} = req.query
     if(isNaN(limite) || isNaN(desde)){
+        //Ocupamos un return porque esto es lo último que le
+        //queremos enviar en el "res" y no queremos que se
+        //ejecute lo demás
         return res.status(400).json({"error": "Los query params no contienen números"})
     }
 
@@ -32,6 +35,8 @@ const usuariosGet = async (req = request, res = response) => {
         .limit(Number(limite))
     ])
 
+    //No ocupamos un return porque es lo último que se ejecuta
+    //y el cliente lee que le guardamos un "json" en "res"
     res.json({
         total, 
         usuarios
