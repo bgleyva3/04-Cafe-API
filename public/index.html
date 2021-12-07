@@ -35,13 +35,15 @@
     <script>
         //no funciona como función de flecha
         function handleCredentialResponse(response) {
+
+            console.log('Url_LOCATION: ', window.location.href)
         
             //Google Token or ID_TOKEN
             //console.log('id_token', response.credential);
-
+            
             const body = {id_token: response.credential}
-
-            fetch('https://crud-nodejs-project.herokuapp.com/api/auth/google', {
+            //https://crud-nodejs-project.herokuapp.com/api/auth/google
+            fetch(window.location.href + 'api/auth/google', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
