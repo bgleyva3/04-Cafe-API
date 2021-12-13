@@ -73,16 +73,14 @@ const usuariosPut = async (req, res = response) => {
         resto.password = bcryptjs.hashSync(password, salt)
     }
 
+    //El método "findByIdAndUpdate" recibe en el primer argumento siempre
+    //el id, por eso no ocupamos renombrarlo a "_id: id" o algo así
     const usuario = await Usuario.findByIdAndUpdate(id, resto, {new: true})
 
     res.json( usuario );
 }
 
-const usuariosPatch = (req, res = response) => {
-    res.json({
-        msg: 'patch API - usuariosPatch'
-    });
-}
+
 
 const usuariosDelete = async (req, res = response) => {
 
@@ -105,6 +103,5 @@ module.exports = {
     usuariosGet,
     usuariosPost,
     usuariosPut,
-    usuariosPatch,
     usuariosDelete,
 }

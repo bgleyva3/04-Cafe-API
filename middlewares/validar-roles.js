@@ -30,7 +30,7 @@ const tieneRole = ( ...roles ) => {
 
         if(!req.usuario){
             return res.status(500).json({
-                msg: 'Se quiere verificar el role sin validar el token primero'
+                msg: 'Se tiene que validar el token primero - Hable con el Admin'
             })
         }
 

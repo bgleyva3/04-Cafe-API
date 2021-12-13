@@ -5,8 +5,7 @@ const { check } = require('express-validator');
 const { usuariosGet,
         usuariosPut,
         usuariosPost,
-        usuariosDelete,
-        usuariosPatch } = require('../controllers/usuarios');
+        usuariosDelete } = require('../controllers/usuarios');
 const { esRoleValido, emailExiste, existeUsuarioPorId } = require('../helpers/db-validators');
 
 /* const { validarCampos } = require('../middlewares/validar-campos');
@@ -49,7 +48,6 @@ router.delete('/:id', [
     validarCampos
 ], usuariosDelete );
 
-router.patch('/', usuariosPatch );
 
 
 
