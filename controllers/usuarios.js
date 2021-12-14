@@ -8,7 +8,7 @@ const bcryptjs = require('bcryptjs')
 
 const Usuario = require('../models/usuario');
 
-
+//Request y response solo ayuda al tipado como en typescript
 const usuariosGet = async (req = request, res = response) => {
 
     const {limite = 5, desde = 0} = req.query
