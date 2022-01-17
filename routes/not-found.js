@@ -5,7 +5,7 @@ const router = Router();
 
 
 router.use('/', (req, res) => {
-    res.json({
+    res.status(404).json({
         msg: 'route not found',
         options: {
             auth:       '/api/auth',
