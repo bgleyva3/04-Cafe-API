@@ -56,7 +56,7 @@ const usuariosPost = async (req, res = response) => {
     await usuario.save()
 
     res.json({
-        msg: 'post API - usuariosPost',
+        msg: 'Usuario creado',
         usuario
     });
 }

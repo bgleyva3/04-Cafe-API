@@ -92,7 +92,10 @@ const crearCategoria = async (req, res = response) => {
 
         await categoria.save()
 
-        res.status(201).json(categoria)
+        res.status(201).json({
+            msg: 'Categoría creada',
+            categoria
+        })
 
     } catch(err){
         console.log(err)

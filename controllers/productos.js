@@ -92,7 +92,9 @@ const crearProducto = async (req, res = response) => {
 
         await producto.save()
 
-        res.status(201).json(producto)
+        res.status(201).json({
+            msg: 'Producto creado',
+            producto})
 
     } catch(err){
         console.log(err)
